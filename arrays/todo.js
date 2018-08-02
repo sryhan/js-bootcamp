@@ -12,3 +12,14 @@ todos.splice(2,1)
 todos.push('javascript')
 todos.shift()
 console.log(todos)
+
+// 1. the first item
+// 2. the second item 
+
+todos.forEach(function (item, index) {
+    console.log(`${index+1}. ${item}`)
+})
+
+for (let count = 0; count < todos.length; count++) {
+    console.log(`${count + 1} ${todos[count]}`)
+}
