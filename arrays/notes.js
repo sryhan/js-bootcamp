@@ -44,12 +44,54 @@ const notes = [{
     body: 'JavaScript, Java, Python, Django, Photoshop, Vue, React, etc.'
 }]
 
-console.log(notes.length)
+const sortNotes = function (notes) {
+    notes.sort(function (a,b) {
+        if (a.title.toLowerCase() < b.title.toLowerCase()) {
+            return -1
+        } else if (b.title.toLowerCase() < a.title.toLowerCase()) {
+            return 1
+        } else {
+            return 0
+        }
+    })
+}
+
+sortNotes(notes)
 console.log(notes)
 
-const myIndex = notes.findIndex(function (note, index) {
-    console.log(note)
-    return note.title === 'Habits to work on'
-})
+// const findNote = function(notes, noteTitle) {
+//     const index = notes.findIndex(function (note) {
+//         return note.title.toLowerCase() === noteTitle.toLowerCase()
+//     })
+//     return notes[index]
+// }
 
-console.log(myIndex)
+// const findNote = function(notes, noteTitle) {
+//     return notes.find(function (note) {
+//         return note.title.toLowerCase() === noteTitle.toLowerCase()
+//     })
+// }
+
+// const findNotes = function(notes, query) {
+//     return notes.filter(function(note, index) {
+//         const isTitleMatch = note.title.toLowerCase().includes(query.toLowerCase())
+//         const isBodyMatch = note.body.toLowerCase().includes(query.toLowerCase())
+//         return isTitleMatch || isBodyMatch
+//     })     
+// }
+
+
+// console.log(findNotes(notes, 'work'))
+
+// const note = findNote(notes, 'My nexT trip')
+// console.log(note)
+
+// console.log(notes.length)
+// console.log(notes)
+
+// const myIndex = notes.findIndex(function (note, index) {
+//     console.log(note)
+//     return note.title === 'Habits to work on'
+// })
+
+// console.log(myIndex)
